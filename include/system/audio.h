@@ -406,9 +406,6 @@ typedef enum {
 #elif defined(STE_FM)
     AUDIO_DEVICE_IN_FM_RX                 = 0x1000000,
 #endif
-#if defined(QCOM_FM_ENABLED) || defined(STE_FM)
-    AUDIO_DEVICE_IN_FM_RX_A2DP            = 0x40000000,
-#endif
     AUDIO_DEVICE_IN_PROXY                 = 0x80000000,
     AUDIO_DEVICE_IN_DEFAULT               = AUDIO_DEVICE_IN_BUILTIN_MIC,
 #else
@@ -436,7 +433,6 @@ typedef enum {
                                AUDIO_DEVICE_IN_BACK_MIC |
 #if defined(QCOM_FM_ENABLED) || defined(STE_FM)
                                AUDIO_DEVICE_IN_FM_RX |
-                               AUDIO_DEVICE_IN_FM_RX_A2DP |
 #endif
 #ifdef QCOM_HARDWARE
                                AUDIO_DEVICE_IN_PROXY |
@@ -451,7 +447,7 @@ typedef enum {
 // explicitly defined in the enum audio_input_clients
 #define AUDIO_INPUT_CLIENT_ID_BASE AUDIO_INPUT_CLIENT_ID1
 
-// AUDIO_INPUT_CLIENT_ID_BASE provide a means to refer to client Id´s not explicitly defined in the enum audio_input_clients
+// AUDIO_INPUT_CLIENT_ID_BASE provide a means to refer to client Idï¿½s not explicitly defined in the enum audio_input_clients
 typedef enum audio_input_clients {
         AUDIO_INPUT_CLIENT_ID1 = 0x1,
         AUDIO_INPUT_CLIENT_ID2 = 0x2,
